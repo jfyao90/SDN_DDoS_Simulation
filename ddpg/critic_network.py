@@ -12,16 +12,16 @@ class CriticNetwork(tf.keras.Model):
         self.h3_critic = h3_critic
 
         # The layers of the model
-        self.hidden_1 = tf.layers.Dense(units=h1_critic, activation=tf.nn.relu,
+        self.hidden_1 = tf.compat.v1.layers.Dense(units=h1_critic, activation=tf.nn.relu,
                                         trainable=trainable,
                                         name='hidden_1')
-        self.hidden_2 = tf.layers.Dense(units=h2_critic, activation=tf.nn.relu,
+        self.hidden_2 = tf.compat.v1.layers.Dense(units=h2_critic, activation=tf.nn.relu,
                                         trainable=trainable,
                                         name='hidden_2')
-        self.hidden_3 = tf.layers.Dense(units=h3_critic, activation=tf.nn.relu,
+        self.hidden_3 = tf.compat.v1.layers.Dense(units=h3_critic, activation=tf.nn.relu,
                                         trainable=trainable,
                                         name='hidden_3')
-        self.output_layer = tf.layers.Dense(units=1,
+        self.output_layer = tf.compat.v1.layers.Dense(units=1,
                                             trainable=trainable,
                                             name='output_layer')  # Default
         # activation function
